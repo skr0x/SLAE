@@ -51,7 +51,6 @@ if args.ip:
 try:
     ip = "{0:0{1}x}".format(int(ip_address(ip)), 8)
     ip = "\\x" + ip[:2] + "\\x" + ip[2:4] + "\\x" + ip[4:6] + "\\x" + ip[6:] 
-    print(ip)
 except AddressValueError:
     print("Invalid IP address")
 
